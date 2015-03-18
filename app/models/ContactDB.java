@@ -22,7 +22,7 @@ public class ContactDB {
    */
   public static void addContact(ContactFormData formData) {
     long idVal = (formData.id == 0) ? currentId++ : formData.id;
-    Contact contact = new Contact(formData.firstName, formData.lastName, formData.telephone, idVal);
+    Contact contact = new Contact(formData.firstName, formData.lastName, formData.telephone, formData.address, idVal);
     contacts.put(idVal, contact);
   }
 
@@ -45,5 +45,13 @@ public class ContactDB {
    */
   public static List<Contact> getContacts() {
     return new ArrayList<>(contacts.values());
+  }
+
+  /**
+   * Deletes contact from DB.
+   * @param id The id.
+   */
+  public static void deleteContact(long id) {
+    contacts.remove(id);
   }
 }

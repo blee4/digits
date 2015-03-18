@@ -50,4 +50,14 @@ public class Application extends Controller {
       return ok(NewContact.render(formData));
     }
   }
+
+  /**
+   * Handles the request to delete form data from the Index page.
+   * @param id The id.
+   * @return The page with the requested form data removed.
+   */
+  public static Result deleteContact(long id) {
+    ContactDB.deleteContact(id);
+    return ok(Index.render(ContactDB.getContacts()));
+  }
 }
