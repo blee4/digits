@@ -1,7 +1,12 @@
 @(message: String)
 
 @Main("Home") {
-  <div class="container">
-    <p>@message</p>
-  </div>
+    <div class="container">
+        <h1>Current Contacts</h1>
+        <table class="table table-striped table-bordered">
+            <tr><th>First</th><th>Last</th><th>Phone</th></tr>
+            <tr><td>Philip</td><td>Johnson</td><td>808-956-3489</td></tr>
+            <tr><td>Cam</td><td>Moore</td><td>808-956-6693</td></tr>
+        </table>
+    </div>
 }
